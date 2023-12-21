@@ -17,7 +17,7 @@ const Students = () => {
   };
 
   const handleAddStudent = (studentData) => {
-    fetch("http://localhost:3000/students/create", {
+    fetch("https://guilded-api.onrender.com/students/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Students = () => {
   };
 
   const handleDeleteStudent = (studentId) => {
-    fetch(`http://localhost:3000/students/${studentId}`, {
+    fetch(`https://guilded-api.onrender.com/students/${studentId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -71,7 +71,7 @@ const Students = () => {
   useEffect(() => {
     const fetchStudentsAndSetState = async () => {
       try {
-        const response = await fetch("http://localhost:3000/users/students");
+        const response = await fetch("https://guilded-api.onrender.com/users/students");
         if (!response.ok) {
           throw new Error("Failed to fetch students");
         }
