@@ -23,7 +23,7 @@ const Opportunities = ({}) => {
   // Adds a new opportunity
   const handleAddOpportunity = (opportunityData) => {
     // Send a POST request to the server
-    fetch("http://localhost:3000/mentoring/", {
+    fetch("https://guilded-api.onrender.com/mentoring/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Opportunities = ({}) => {
   const handleEditOpportunity = (opportunityId, updatedData) => {
     // Send a PATCH request to the server
     console.log(updatedData);
-    fetch(`http://localhost:3000/mentoring/${opportunityId}`, {
+    fetch(`https://guilded-api.onrender.com/mentoring/${opportunityId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ const Opportunities = ({}) => {
   // Deletes an opportunity
   const handleDeleteOpportunity = (opportunityId) => {
     // Send a DELETE request to the server
-    fetch(`http://localhost:3000/mentoring/${opportunityId}`, {
+    fetch(`https://guilded-api.onrender.com/mentoring/${opportunityId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -108,7 +108,7 @@ const Opportunities = ({}) => {
   useEffect(() => {
     const fetchOpportunitiesAndSetState = async () => {
       try {
-        const response = await fetch("http://localhost:3000/mentoring");
+        const response = await fetch("https://guilded-api.onrender.com/mentoring");
         if (!response.ok) {
           throw new Error("Failed to fetch opportunities");
         }
