@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigins = ["http://localhost:5173", 'https://cron-job.org']
+const allowedOrigins = ["http://localhost:5173", "https://guidedapp.netlify.app", 'https://cron-job.org']
 const corsOptions = {
     credentials: true,
     origin: function (origin, callback) {
@@ -39,6 +39,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
+app.get("/", (req, res)=>res.status(200).json({message:"Hello World"}));
 app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
 app.use("/mentoring", mentoringRoutes);
