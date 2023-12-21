@@ -22,7 +22,7 @@ const Mentors = () => {
   };
 
   const handleAddMentor = (mentorData) => {
-    fetch("http://localhost:3000/mentors/create", {
+    fetch("https://guilded-api.onrender.com/mentors/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Mentors = () => {
   };
 
   const handleDeleteMentor = (mentorId) => {
-    fetch(`http://localhost:3000/mentors/${mentorId}`, {
+    fetch(`https://guilded-api.onrender.com/mentors/${mentorId}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -76,7 +76,7 @@ const Mentors = () => {
   useEffect(() => {
     const fetchMentorsAndSetState = async () => {
       try {
-        const response = await fetch("http://localhost:3000/users/mentors");
+        const response = await fetch("https://guilded-api.onrender.com/users/mentors");
         if (!response.ok) {
           throw new Error("Failed to fetch mentors");
         }
