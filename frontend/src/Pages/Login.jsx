@@ -38,7 +38,7 @@ const Login = () => {
 
     try {
       // Make a request to the login endpoint
-      const response = await axios.post(`http://localhost:3000/auth/login`, { email, password });
+      const response = await axios.post(`https://guilded-api.onrender.com/auth/login`, { email, password });
       
       // If the login was successful, store the JWT in local storage
       localStorage.setItem('guided__token', response.data.token);
