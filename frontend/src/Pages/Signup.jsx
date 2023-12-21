@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import './Signup.css';
 
-export const API_URL = "http://localhost:3000";
+export const API_URL = "https://guilded-api.onrender.com";
 
 // Form input component
 const FormInput = ({ type, placeholder, value, onChange }) => (
@@ -55,7 +55,7 @@ const Signup = () => {
     dispatch({ type: 'start_loading' });
 
     try {
-      const res = await axios.post(`http://localhost:3000/auth/signup`, { name, email, password, role });
+      const res = await axios.post(`https://guilded-api.onrender.com/auth/signup`, { name, email, password, role });
       
       //Check res status
       if (res.status === 201) {
