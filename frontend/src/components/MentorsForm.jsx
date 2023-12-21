@@ -63,7 +63,7 @@ const MentorsForm = ({ onCancel, isEdit, mentorData }) => {
 
         try {
           setLoading(true)
-          const res = await axios.post(`http://localhost:3000/auth/signup`, formData);
+          const res = await axios.post(`https://guilded-api.onrender.com/auth/signup`, formData);
           
           //Check res status
           if (res.status === 201) {
@@ -97,7 +97,7 @@ const MentorsForm = ({ onCancel, isEdit, mentorData }) => {
 
       try {
         setLoading(true)
-        const res = await axios.put(`http://localhost:3000/users/${mentorData._id}`, formData);
+        const res = await axios.put(`https://guilded-api.onrender.com/users/${mentorData._id}`, formData);
         
         //Check res status
         if (res.status === 200) {
