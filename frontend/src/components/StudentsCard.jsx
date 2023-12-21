@@ -9,7 +9,7 @@ const StudentsCard = ({ student, onDelete, handleOpenEditModal }) => {
     const handleDeleteUser = async()=>{
         try{
             setDeleting(true);
-            const res = await axios.delete(`http://localhost:3000/users/${student._id}`);
+            const res = await axios.delete(`https://guilded-api.onrender.com/users/${student._id}`);
 
             if(res.status===200){
                 console.log("User deleted successfully");
